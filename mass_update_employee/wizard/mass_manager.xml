@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_mass_manager_wizard_form" model="ir.ui.view">
+        <field name="name">Update Mass</field>
+        <field name="model">mass.manager.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Update Mass">
+                <group col="2">
+                    <group string="Update Job">
+                        <field name="is_job"/>
+                        <field name="new_job_id" required="is_job"
+                               invisible="is_job == False"/>
+
+                    </group>
+                    <group string="Update Manager">
+                        <field name="is_manager"/>
+                        <field name="new_manager_id" required="is_manager"
+                               invisible="is_manager == False"/>
+
+                    </group>
+                </group>
+                <footer>
+                    <button string="Update" type="object" name="action_update_manager_job" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
